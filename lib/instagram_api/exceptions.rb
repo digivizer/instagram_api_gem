@@ -7,7 +7,7 @@ module InstagramApi
     def initialize(response)
       body = JSON.parse(response.body)
 
-      @code = "#{response[:status]}"
+      @code = "#{response.code}"
       @type = body['meta']['error_type']
       @message = body['meta']['error_message']
     end
