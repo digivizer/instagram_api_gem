@@ -8,8 +8,8 @@ module InstagramApi
       body = JSON.parse(response.body)
 
       @code = "#{response.code}"
-      @type = body['meta']['error_type']
-      @message = body['meta']['error_message']
+      @type = body&.dig('meta', 'error_type')
+      @message = body&.dig('meta', 'error_message')
     end
   end
 
